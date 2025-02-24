@@ -1,6 +1,38 @@
+import { useEffect, useState } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 
 function Home() {
+  const [myProfile, setmyProfile] = useState(null);
+
+  const headers = new Headers({
+    Authorization:
+      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2JjNGNkM2U3MDMzNzAwMTUzMTZkYWUiLCJpYXQiOjE3NDAzOTM2ODMsImV4cCI6MTc0MTYwMzI4M30.tM6t2Rh-7iEQNFJu8UFjJn4h9cGKrxIPWJj-y-sV3rc",
+  });
+
+  const fillProfilePage = async () => {
+    try {
+      let response = await fetch("https://striveschool-api.herokuapp.com/api/profile/me", {
+        method: "GET",
+        headers,
+      });
+      if (response.ok) {
+        let data = await response.json();
+
+        setmyProfile(data);
+      } else {
+        throw new Error("Error in fetching ");
+      }
+    } catch (err) {
+      console.log("error", err);
+    }
+  };
+
+  useEffect(() => {
+    fillProfilePage();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  console.log(myProfile);
+
   return (
     <Container>
       <Row>
@@ -28,7 +60,27 @@ function Home() {
             </div>
             <i className="bi bi-pencil float-end me-4 mt-2 fs-5"></i>
 
+          <div className="border rounded my-3 ">
+            <div>{myProfile && <img className="copertina" src={myProfile.image} alt="Copertina" />}</div>
+            <div>Foto profilo</div>
             <div className="p-4 mt-3">
+              <div className="d-flex justify-content-between">
+                {myProfile && (
+                  <h3>
+                    {myProfile.name} {myProfile.surname}
+                  </h3>
+                )}
+
+                <span>
+                  <i className="bi bi-pencil"></i>
+                </span>
+              </div>
+              <Button variant="outline-primary" className="rounded-pill border-dashed">
+                Aggiungi badge di verifica
+              </Button>
+              {myProfile && <p>{myProfile.area}</p>}
+              {myProfile && <p>{myProfile.email}</p>}
+
               <div className="d-flex ">
                 <h3 className="me-2 fs-4 m-0">Nome Cognome</h3>
                 <a
