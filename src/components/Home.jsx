@@ -29,19 +29,19 @@ function Home() {
             <div>
               <div>
                 <div className="d-flex">
-                  <p>
+                  <span>
                     <b>Lingua del profilo</b>
-                  </p>
+                  </span>
                   <span>italiano</span>
                 </div>
                 <div>penna</div>
               </div>
               <div className="border-top ">
                 <div className="d-flex">
-                  <p>
+                  <span>
                     <b>Profilo pubblico e URL</b>
-                  </p>
-                  <span>italiano</span>
+                  </span>
+                  <span></span>
                 </div>
                 <div>penna</div>
               </div>
