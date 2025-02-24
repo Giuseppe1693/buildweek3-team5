@@ -17,44 +17,42 @@ function MyNavbar() {
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: "100px" }} navbarScroll>
-            <Nav.Link href="#action1">
-              <a href="" className="d-flex flex-column text-secondary text-decoration-none align-item-center">
-                <i className="bi bi-house-door-fill text-center"></i>
-                <span>Home</span>
-              </a>
-            </Nav.Link>
-            <Nav.Link href="#action2">
-              <a href="" className="d-flex flex-column text-secondary text-decoration-none align-item-center">
-                <i className="bi bi-person-lines-fill text-center"></i>
-                <span>Rete</span>
-              </a>
-            </Nav.Link>
-            <Nav.Link href="#action2">
-              <a href="" className="d-flex flex-column text-secondary text-decoration-none align-item-center">
-                <i className="bi bi-briefcase-fill text-center "></i>
-                <span>Lavoro</span>
-              </a>
-            </Nav.Link>
-            <Nav.Link href="#action2">
-              <a href="" className="d-flex flex-column text-secondary text-decoration-none align-item-center">
-                <i className="bi bi-chat-right-dots-fill text-center"></i>
-                <span>Messaggistica</span>
-              </a>
-            </Nav.Link>
-            <Nav.Link href="#action2">
-              <a href="" className="d-flex flex-column text-secondary text-decoration-none align-item-center">
-                <i className="bi bi-bell-fill text-center"></i>
-                <span>Notifiche</span>
-              </a>
-            </Nav.Link>
-            <NavDropdown
-              title={
-                <span>
-                  <img src="" alt="icon" width={20} height={20}></img>
-                </span>
-              }
-              id="navbarScrollingDropdown"
+            <Nav.Link
+              href="#action1"
+              className="d-flex flex-column text-secondary text-decoration-none align-item-center"
             >
+              <i className="bi bi-house-door-fill text-center"></i>
+              <span>Home</span>
+            </Nav.Link>
+            <Nav.Link
+              href="#action2"
+              className="d-flex flex-column text-secondary text-decoration-none align-item-center"
+            >
+              <i className="bi bi-person-lines-fill text-center"></i>
+              <span>Rete</span>
+            </Nav.Link>
+            <Nav.Link
+              href="#action2"
+              className="d-flex flex-column text-secondary text-decoration-none align-item-center"
+            >
+              <i className="bi bi-briefcase-fill text-center "></i>
+              <span>Lavoro</span>
+            </Nav.Link>
+            <Nav.Link
+              href="#action2"
+              className="d-flex flex-column text-secondary text-decoration-none align-item-center"
+            >
+              <i className="bi bi-chat-right-dots-fill text-center"></i>
+              <span>Messaggistica</span>
+            </Nav.Link>
+            <Nav.Link
+              href="#action2"
+              className="d-flex flex-column text-secondary text-decoration-none align-item-center"
+            >
+              <i className="bi bi-bell-fill text-center"></i>
+              <span>Notifiche</span>
+            </Nav.Link>
+            <NavDropdown title="Link" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action4">Another action</NavDropdown.Item>
               <NavDropdown.Divider />
