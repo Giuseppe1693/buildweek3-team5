@@ -1,44 +1,55 @@
-import { Col, Container, Row } from "react-bootstrap";
+import { Button, Col, Container, Row } from "react-bootstrap";
 
 function Home() {
   return (
     <Container>
       <Row>
-        <Col md={2}>
-          <div className="border rounded my-2">
-            <div>img</div>
-            <div>
-              <h1>nome bla bla</h1>
-              <p>loco lav</p>
-              <p>fda</p>
-              <p>fdadsfwef</p>
+        <Col md={8}>
+          <div className="border rounded my-3 ">
+            <div>IMG</div>
+            <div>Foto profilo</div>
+            <div className=" p-4 mt-3">
+              <h3>Nome Cognome</h3>
+              <span>Aggiungu badge di verifica</span>
+              <span>ruolo</span>
+              <p>corso</p>
+              <p>località</p>
+              <p>localitàcollegamenti</p>
+              <Button>Disponibile per</Button>
+              <div className="my-2">
+                <Button variant="outline-primary">Aggiungi sezione del profilo</Button>
+                <Button className="mx-2">icon kebab</Button>
+              </div>
+              <Button variant="outline-primary">Migliora profilo</Button>
             </div>
           </div>
-          <div className="border my-2">
-            <p>Visitatori del profilo</p>
-            <p>Visualizza tutte le analisi</p>
-          </div>
-          <div className="border my-2">
-            <p>Fai crescere il tuo business con Premium Business</p>
-            <p> Prova per 0 EUR</p>
-          </div>
-          <div className="border my-2">
-            <ul>
-              <li>Elementi salvati</li>
-              <li>Gruppi</li>
-              <li>Eventi</li>
-            </ul>
-          </div>
         </Col>
-        <Col md={8}>
-          <div></div>
-          <div></div>
-        </Col>
-        <Col md={2}>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div> {/* ? footer */}
+        <Col md={4}>
+          <div className="border rounded m-3">
+            <div>
+              <div>
+                <div className="d-flex">
+                  <p>
+                    <b>Lingua del profilo</b>
+                  </p>
+                  <span>italiano</span>
+                </div>
+                <div>penna</div>
+              </div>
+              <div className="border-top ">
+                <div className="d-flex">
+                  <p>
+                    <b>Profilo pubblico e URL</b>
+                  </p>
+                  <span>italiano</span>
+                </div>
+                <div>penna</div>
+              </div>
+            </div>
+            <div></div>
+            <div></div>
+            <div></div> {/* ? footer */}
+          </div>
         </Col>
       </Row>
     </Container>
