@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
+import MyFooter from "./MyFooter";
 
 function Home() {
   const [myProfile, setmyProfile] = useState(null);
@@ -42,7 +43,7 @@ function Home() {
             <div className="position-relative">
               {" "}
               <img
-                src={myProfile.image}
+                src={myProfile?.image}
                 alt="Foto Profilo"
                 className="position-absolute rounded-circle ms-3"
                 style={{
@@ -61,7 +62,7 @@ function Home() {
               <div className="d-flex">
                 <h3 className="me-2 fs-4 m-0">
                   {" "}
-                  {myProfile.name} {myProfile.surname}
+                  {myProfile?.name} {myProfile?.surname}
                 </h3>
                 <a
                   href="#"
@@ -165,6 +166,12 @@ function Home() {
               </div>
             </div>
           </div>
+
+          <div className="border rounded m-3 bg-white">
+            <p>dd</p>
+          </div>
+
+          <MyFooter />
         </Col>
       </Row>
     </Container>
