@@ -17,7 +17,6 @@ function Home() {
       });
       if (response.ok) {
         let data = await response.json();
-
         setmyProfile(data);
       } else {
         throw new Error("Error in fetching ");
@@ -31,6 +30,7 @@ function Home() {
     fillProfilePage();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
   console.log(myProfile);
 
   return (
@@ -38,15 +38,11 @@ function Home() {
       <Row>
         <Col md={8}>
           <div className="border rounded my-3 bg-white">
+            <div>{myProfile && <img className="copertina" src={myProfile.image} alt="Copertina" />}</div>
             <div className="position-relative">
+              {" "}
               <img
-                className="copertina"
-                src="https://images.unsplash.com/photo-1739996698574-30dfcdaa64b8?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Copertina"
-              />
-
-              <img
-                src="https://media.istockphoto.com/id/1389348844/it/foto/scatto-in-studio-di-una-bella-giovane-donna-sorridente-in-piedi-su-uno-sfondo-grigio.jpg?s=612x612&w=0&k=20&c=et2I7qC5QcTs8ft2G3m4C82-S6quxN_1YOJvxlIPKyw="
+                src={myProfile.image}
                 alt="Foto Profilo"
                 className="position-absolute rounded-circle"
                 style={{
@@ -58,31 +54,13 @@ function Home() {
                 }}
               />
             </div>
-            <i className="bi bi-pencil float-end me-4 mt-2 fs-5"></i>
 
-          <div className="border rounded my-3 ">
-            <div>{myProfile && <img className="copertina" src={myProfile.image} alt="Copertina" />}</div>
-            <div>Foto profilo</div>
             <div className="p-4 mt-3">
-              <div className="d-flex justify-content-between">
-                {myProfile && (
-                  <h3>
-                    {myProfile.name} {myProfile.surname}
-                  </h3>
-                )}
-
-                <span>
-                  <i className="bi bi-pencil"></i>
-                </span>
-              </div>
-              <Button variant="outline-primary" className="rounded-pill border-dashed">
-                Aggiungi badge di verifica
-              </Button>
-              {myProfile && <p>{myProfile.area}</p>}
-              {myProfile && <p>{myProfile.email}</p>}
-
-              <div className="d-flex ">
-                <h3 className="me-2 fs-4 m-0">Nome Cognome</h3>
+              <div className="d-flex">
+                <h3 className="me-2 fs-4 m-0">
+                  {" "}
+                  {myProfile.name} {myProfile.surname}
+                </h3>
                 <a
                   href="#"
                   className="rounded-pill border-dashed d-inline-block text-primary text-decoration-none pt-0 ps-2 pe-2"
@@ -94,14 +72,14 @@ function Home() {
                 </a>
               </div>
 
-              <p className="m-0 mt-1 mb-1">Full Stack Developer</p>
+              <p className="m-0 mt-1 mb-1">???</p>
 
               <div className="d-flex align-items-center">
-                <p className="m-0 mb-1 me-1 text-muted" style={{ fontSize: "0.9rem" }}>
-                  Palermo, Sicilia, Italia ·
+                <p className="m-0  me-1 text-muted" style={{ fontSize: "0.9rem" }}>
+                  {myProfile && myProfile.area}
                 </p>
 
-                <a href="#" className=" text-decoration-none ms-1 mb-1" style={{ fontSize: "0.9rem" }}>
+                <a href="#" className="text-decoration-none ms-1 " style={{ fontSize: "0.9rem" }}>
                   Informazioni di contatto
                 </a>
               </div>
@@ -109,11 +87,11 @@ function Home() {
                 collegamenti
               </a>
 
-              <div className="d-flex">
+              <div className="d-flex mt-2">
                 <Button className="rounded-pill bg-text-primary me-2 btn-sm">Disponibile per</Button>
                 <Button variant="outline-primary rounded-pill me-2 btn-sm">Aggiungi sezione del profilo</Button>
                 <Button variant="outline-primary rounded-pill me-2 btn-sm">Migliora profilo</Button>
-                <Button variant="outline-secondary" className="rounded-circle rounded-pill  btn-sm">
+                <Button variant="outline-secondary" className="rounded-circle rounded-pill btn-sm">
                   Risorse
                 </Button>
               </div>
@@ -122,9 +100,9 @@ function Home() {
           {/* SEZIONE ANALISI */}
           <section className="border rounded my-3 p-4  bg-white">
             <h5>Analisi</h5>
-            <span className="text-secondary  " style={{ fontSize: "0.9rem" }}>
+            <span className="text-secondary" style={{ fontSize: "0.9rem" }}>
               {" "}
-              <i className="bi bi-eye-fill  me-1"></i>
+              <i className="bi bi-eye-fill me-1"></i>
               Solo per te
             </span>
 
@@ -182,9 +160,6 @@ function Home() {
                 </div>
               </div>
             </div>
-            <div></div>
-            <div></div>
-            <div></div> {/* ? footer */}
           </div>
         </Col>
       </Row>
