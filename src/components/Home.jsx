@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
-import MyFooter from "./MyFooter";
 
 function Home() {
   const [myProfile, setmyProfile] = useState(null);
@@ -90,13 +89,20 @@ function Home() {
                 100 collegamenti
               </a>
 
-              <div className="d-flex mt-2">
-                <Button className="rounded-pill bg-text-primary me-2 btn-sm ps-3 pe-3">Disponibile per</Button>
-                <Button variant="outline-primary rounded-pill me-2 btn-sm ps-3 pe-3">
+              <div className="d-flex flex-wrap gap-2 mt-2">
+                <Button className="rounded-pill bg-text-primary btn-sm ps-3 pe-3 flex-grow-1 flex-md-grow-0">
+                  Disponibile per
+                </Button>
+                <Button variant="outline-primary" className="rounded-pill btn-sm ps-3 pe-3 flex-grow-1 flex-md-grow-0">
                   Aggiungi sezione del profilo
                 </Button>
-                <Button variant="outline-primary rounded-pill me-2 btn-sm ps-3 pe-3">Migliora profilo</Button>
-                <Button variant="outline-secondary ps-3 pe-3" className="rounded-circle rounded-pill btn-sm">
+                <Button variant="outline-primary" className="rounded-pill btn-sm ps-3 pe-3 flex-grow-1 flex-md-grow-0">
+                  Migliora profilo
+                </Button>
+                <Button
+                  variant="outline-secondary"
+                  className="rounded-pill btn-sm ps-3 pe-3 flex-grow-1 flex-md-grow-0"
+                >
                   Risorse
                 </Button>
               </div>
@@ -166,12 +172,6 @@ function Home() {
               </div>
             </div>
           </div>
-
-          <div className="border rounded m-3 bg-white">
-            <p>dd</p>
-          </div>
-
-          <MyFooter />
         </Col>
       </Row>
     </Container>
