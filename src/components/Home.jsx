@@ -44,15 +44,17 @@ function Home() {
               <img
                 src={myProfile.image}
                 alt="Foto Profilo"
-                className="position-absolute rounded-circle"
+                className="position-absolute rounded-circle ms-3"
                 style={{
-                  bottom: "-30px",
+                  bottom: "-40px",
                   left: "10px",
-                  width: "100px",
-                  height: "100px",
+                  width: "130px",
+                  height: "130px",
                   objectFit: "cover",
+                  border: "3.5px solid white",
                 }}
               />
+              <i className="bi bi-pencil float-end me-4 mt-2 fs-5"></i>
             </div>
 
             <div className="p-4 mt-3">
@@ -63,35 +65,37 @@ function Home() {
                 </h3>
                 <a
                   href="#"
-                  className="rounded-pill border-dashed d-inline-block text-primary text-decoration-none pt-0 ps-2 pe-2"
+                  className="rounded-pill border-dashed d-inline-block text-primary text-decoration-none pt-0 ps-2 pe-2 fw-semibold"
                   style={{ border: "1.5px dashed currentColor", fontSize: "0.85rem" }}
                 >
                   {" "}
-                  <i className="bi bi-patch-check-fill me-1"></i>
+                  <i className="bi bi-patch-check-fill me-1 "></i>
                   Aggiungi badge di verifica
                 </a>
               </div>
 
-              <p className="m-0 mt-1 mb-1">???</p>
+              <p className="m-0 mt-1 mb-1"> Full Stack Developer</p>
 
               <div className="d-flex align-items-center">
                 <p className="m-0  me-1 text-muted" style={{ fontSize: "0.9rem" }}>
                   {myProfile && myProfile.area}
                 </p>
 
-                <a href="#" className="text-decoration-none ms-1 " style={{ fontSize: "0.9rem" }}>
+                <a href="#" className="text-decoration-none ms-1 fw-semibold" style={{ fontSize: "0.9rem" }}>
                   Informazioni di contatto
                 </a>
               </div>
-              <a href="#" className="text-decoration-none" style={{ fontSize: "0.9rem" }}>
-                collegamenti
+              <a href="#" className="text-decoration-none fw-semibold" style={{ fontSize: "0.9rem" }}>
+                100 collegamenti
               </a>
 
               <div className="d-flex mt-2">
-                <Button className="rounded-pill bg-text-primary me-2 btn-sm">Disponibile per</Button>
-                <Button variant="outline-primary rounded-pill me-2 btn-sm">Aggiungi sezione del profilo</Button>
-                <Button variant="outline-primary rounded-pill me-2 btn-sm">Migliora profilo</Button>
-                <Button variant="outline-secondary" className="rounded-circle rounded-pill btn-sm">
+                <Button className="rounded-pill bg-text-primary me-2 btn-sm ps-3 pe-3">Disponibile per</Button>
+                <Button variant="outline-primary rounded-pill me-2 btn-sm ps-3 pe-3">
+                  Aggiungi sezione del profilo
+                </Button>
+                <Button variant="outline-primary rounded-pill me-2 btn-sm ps-3 pe-3">Migliora profilo</Button>
+                <Button variant="outline-secondary ps-3 pe-3" className="rounded-circle rounded-pill btn-sm">
                   Risorse
                 </Button>
               </div>
