@@ -6,44 +6,70 @@ function Home() {
       <Row>
         <Col md={8}>
           <div className="border rounded my-3 ">
-            <div>IMG</div>
+            <div>
+              <img
+                className="copertina"
+                src="https://images.unsplash.com/photo-1739996698574-30dfcdaa64b8?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Copertina"
+              />
+            </div>
             <div>Foto profilo</div>
-            <div className=" p-4 mt-3">
-              <h3>Nome Cognome</h3>
-              <span>Aggiungu badge di verifica</span>
-              <span>ruolo</span>
+            <div className="p-4 mt-3">
+              <div className="d-flex justify-content-between">
+                <h3>Nome Cognome</h3>
+                <span>
+                  <i className="bi bi-pencil"></i>
+                </span>
+              </div>
+              <Button variant="outline-primary" className="rounded-pill border-dashed">
+                Aggiungi badge di verifica
+              </Button>
+              <p>ruolo</p>
               <p>corso</p>
               <p>località</p>
               <p>localitàcollegamenti</p>
-              <Button>Disponibile per</Button>
-              <div className="my-2">
-                <Button variant="outline-primary">Aggiungi sezione del profilo</Button>
-                <Button className="mx-2">icon kebab</Button>
+              <div className="d-flex ">
+                <Button className="rounded-pill bg-text-primary px-5 mx-1">Disponibile per</Button>
+                <Button variant="outline-primary rounded-pill mx-1">Aggiungi sezione del profilo</Button>
+                <Button variant="outline-primary rounded-pill mx-1">Migliora profilo</Button>
+                <Button variant="outline-secondary " className="mx-2 rounded-circle rounded-pill mx-1">
+                  Risorse
+                </Button>
+
+                {/* <i className="bi bi-three-dots"></i> */}
               </div>
-              <Button variant="outline-primary">Migliora profilo</Button>
             </div>
           </div>
+          {/* SEZIONE ANALISI */}
+          <section className="border rounded my-3 ">
+            <h4>Analisi</h4>
+            <span className="text-secondary ">Solo per te</span>
+          </section>
         </Col>
         <Col md={4}>
           <div className="border rounded m-3">
-            <div>
-              <div>
-                <div className="d-flex">
+            <div className="p-4">
+              <div className="d-flex justify-content-between">
+                <div>
                   <span>
                     <b>Lingua del profilo</b>
                   </span>
-                  <span>italiano</span>
+                  <p>italiano</p>
                 </div>
-                <div>penna</div>
+                <div>
+                  <i className="bi bi-pencil"></i>
+                </div>
               </div>
-              <div className="border-top ">
-                <div className="d-flex">
+              <div className="border-top pt-3 d-flex justify-content-between">
+                <div>
                   <span>
                     <b>Profilo pubblico e URL</b>
                   </span>
-                  <span></span>
+                  <p>www.Link/profilo/linkedin</p>
                 </div>
-                <div>penna</div>
+                <div>
+                  <i className="bi bi-pencil"></i>
+                </div>
               </div>
             </div>
             <div></div>
