@@ -1,22 +1,52 @@
+import { useEffect, useState } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 
 function Home() {
+  const [myProfile, setmyProfile] = useState(null);
+
+  const headers = new Headers({
+    Authorization:
+      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2JjNGNkM2U3MDMzNzAwMTUzMTZkYWUiLCJpYXQiOjE3NDAzOTM2ODMsImV4cCI6MTc0MTYwMzI4M30.tM6t2Rh-7iEQNFJu8UFjJn4h9cGKrxIPWJj-y-sV3rc",
+  });
+
+  const fillProfilePage = async () => {
+    try {
+      let response = await fetch("https://striveschool-api.herokuapp.com/api/profile/me", {
+        method: "GET",
+        headers,
+      });
+      if (response.ok) {
+        let data = await response.json();
+
+        setmyProfile(data);
+      } else {
+        throw new Error("Error in fetching ");
+      }
+    } catch (err) {
+      console.log("error", err);
+    }
+  };
+
+  useEffect(() => {
+    fillProfilePage();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  console.log(myProfile);
+
   return (
     <Container>
       <Row>
         <Col md={8}>
           <div className="border rounded my-3 ">
             <div>
-              <img
-                className="copertina"
-                src="https://images.unsplash.com/photo-1739996698574-30dfcdaa64b8?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Copertina"
-              />
+              <img className="copertina" src={myProfile.image} alt="Copertina" />
             </div>
             <div>Foto profilo</div>
             <div className="p-4 mt-3">
               <div className="d-flex justify-content-between">
-                <h3>Nome Cognome</h3>
+                <h3>
+                  {myProfile.name} {myProfile.surname}
+                </h3>
                 <span>
                   <i className="bi bi-pencil"></i>
                 </span>
@@ -24,10 +54,10 @@ function Home() {
               <Button variant="outline-primary" className="rounded-pill border-dashed">
                 Aggiungi badge di verifica
               </Button>
-              <p>ruolo</p>
-              <p>corso</p>
-              <p>località</p>
-              <p>localitàcollegamenti</p>
+              <p>{myProfile.bio}</p>
+
+              <p>{myProfile.area}</p>
+              <p>{myProfile.email}</p>
               <div className="d-flex ">
                 <Button className="rounded-pill bg-text-primary px-5 mx-1">Disponibile per</Button>
                 <Button variant="outline-primary rounded-pill mx-1">Aggiungi sezione del profilo</Button>
