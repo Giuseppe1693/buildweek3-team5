@@ -38,15 +38,16 @@ function Home() {
       <Row>
         <Col md={8}>
           <div className="border rounded my-3 ">
-            <div>
-              <img className="copertina" src={myProfile.image} alt="Copertina" />
-            </div>
+            <div>{myProfile && <img className="copertina" src={myProfile.image} alt="Copertina" />}</div>
             <div>Foto profilo</div>
             <div className="p-4 mt-3">
               <div className="d-flex justify-content-between">
-                <h3>
-                  {myProfile.name} {myProfile.surname}
-                </h3>
+                {myProfile && (
+                  <h3>
+                    {myProfile.name} {myProfile.surname}
+                  </h3>
+                )}
+
                 <span>
                   <i className="bi bi-pencil"></i>
                 </span>
@@ -54,10 +55,9 @@ function Home() {
               <Button variant="outline-primary" className="rounded-pill border-dashed">
                 Aggiungi badge di verifica
               </Button>
-              <p>{myProfile.bio}</p>
+              {myProfile && <p>{myProfile.area}</p>}
+              {myProfile && <p>{myProfile.email}</p>}
 
-              <p>{myProfile.area}</p>
-              <p>{myProfile.email}</p>
               <div className="d-flex ">
                 <Button className="rounded-pill bg-text-primary px-5 mx-1">Disponibile per</Button>
                 <Button variant="outline-primary rounded-pill mx-1">Aggiungi sezione del profilo</Button>
