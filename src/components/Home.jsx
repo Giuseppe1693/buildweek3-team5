@@ -1,37 +1,22 @@
-import { useEffect, useState } from "react";
+/* import { useEffect, useState } from "react"; */
 import { Button, Col, Container, Row } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
+import { getMyProfile } from "../redux/actions";
+import { useEffect } from "react";
 
 function Home() {
-  const [myProfile, setmyProfile] = useState(null);
-
-  const headers = new Headers({
-    Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2JjNGNkM2U3MDMzNzAwMTUzMTZkYWUiLCJpYXQiOjE3NDAzOTM2ODMsImV4cCI6MTc0MTYwMzI4M30.tM6t2Rh-7iEQNFJu8UFjJn4h9cGKrxIPWJj-y-sV3rc",
+  /*   const [myProfile, setmyProfile] = useState(null); */
+  /* const myProfile = useSelector((state) => state.myProfiley.content); */
+  const myProfile = useSelector((state) => {
+    console.log(state);
+    return state.myprofile.content;
   });
 
-  const fillProfilePage = async () => {
-    try {
-      let response = await fetch("https://striveschool-api.herokuapp.com/api/profile/me", {
-        method: "GET",
-        headers,
-      });
-      if (response.ok) {
-        let data = await response.json();
-        setmyProfile(data);
-      } else {
-        throw new Error("Error in fetching ");
-      }
-    } catch (err) {
-      console.log("error", err);
-    }
-  };
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    fillProfilePage();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  console.log(myProfile);
+    dispatch(getMyProfile());
+  }, [dispatch]);
 
   return (
     <Container>
