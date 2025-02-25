@@ -1,4 +1,4 @@
-import { ADD_LINK } from "../actions/footerActions";
+/* import { ADD_LINK } from "../actions/footerActions";
 
 // Stato iniziale
 //NOTA:Attualmente la voce "url" non contiene nessun link di collegamento, ma semplicemente un "#".
@@ -50,3 +50,4 @@ const footerReducer = (state = initialState, action) => {
 };
 
 export default footerReducer;
+ */

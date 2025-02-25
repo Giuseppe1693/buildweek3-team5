@@ -3,7 +3,7 @@ import "./App.css";
 import Home from "./components/Home";
 import MyFooter from "./components/MyFooter";
 import MyNavbar from "./components/MyNavbar";
-import store from "./redux/store/MyFooterStore";
+import store from "./redux/store/index.js";
 
 function App() {
   return (

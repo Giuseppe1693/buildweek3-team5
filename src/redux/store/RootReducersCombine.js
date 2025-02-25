@@ -1,4 +1,4 @@
-//Qui si dovrebbero combinare tutti i reducers del sito in un unico rootReducer.
+/* //Qui si dovrebbero combinare tutti i reducers del sito in un unico rootReducer.
 
 import { combineReducers } from "redux";
 import { MyFooterActions } from "../actions/MyFooterActions";
@@ -10,3 +10,4 @@ const rootReducer = combineReducers({
 });
 
 export default rootReducer;
+ */

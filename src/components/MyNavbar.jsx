@@ -6,26 +6,39 @@ function MyNavbar() {
       <Container className="d-flex justify-content-between align-items-center">
         <div className="d-flex align-items-center">
           <Navbar.Brand href="#">
-            <img src="../src/assets/2048px-LinkedIn_icon.svg.png" alt="logo" height={40} />
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/2048px-LinkedIn_icon.svg.png"
+              alt="logo"
+              height={30}
+            />
           </Navbar.Brand>
           <Form className="d-flex me-3">
             <div className="input-group">
-              <span className="input-group-text bg-light border-0">
+              <span
+                className="input-group-text border-0"
+                style={{
+                  backgroundColor: "#F2F2F2",
+                }}
+              >
                 <i className="bi bi-search"></i>
               </span>
               <Form.Control
                 type="search"
                 placeholder="Cerca"
-                className="border-0 bg-light"
+                className="border-0"
                 aria-label="Search"
-                style={{ width: "150px", height: "35px" }}
+                style={{
+                  width: "250px",
+                  height: "35px",
+                  backgroundColor: "#F2F2F2",
+                }}
               />
             </div>
           </Form>
         </div>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
-          <Nav className="ms-auto my-2 my-lg-0 d-flex align-items-center gap-4 navbarScroll">
+          <Nav className="ms-auto my-2 my-lg-0 d-flex align-items-center gap-5 navbarScroll">
             <Nav.Link
               href="#action1"
               className="d-flex flex-column align-items-center text-secondary text-decoration-none p-0 "
@@ -82,6 +95,23 @@ function MyNavbar() {
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action8">Esci</NavDropdown.Item>
             </NavDropdown>
+            <div className="border-start " style={{ height: "25px" }}></div>
+
+            <Nav.Link
+              href="#action7"
+              className="d-flex justify-content-center align-items-center text-decoration-none p-0"
+            >
+              <span
+                style={{
+                  fontSize: "0.75rem",
+                  color: "#915907",
+                  textDecoration: "underline",
+                  textAlign: "center",
+                }}
+              >
+                Prova Premium per 0 <br /> EUR
+              </span>
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
