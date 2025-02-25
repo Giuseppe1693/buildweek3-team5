@@ -3,7 +3,7 @@ import { Button, Col, Container, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { getMyProfile } from "../redux/actions";
 import { useEffect } from "react";
-
+import ModifyProfile from "./ModifyProfile";
 function Home() {
   /*   const [myProfile, setmyProfile] = useState(null); */
   /* const myProfile = useSelector((state) => state.myProfiley.content); */
@@ -16,7 +16,8 @@ function Home() {
 
   useEffect(() => {
     dispatch(getMyProfile());
-  }, [dispatch]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <Container>
@@ -39,15 +40,12 @@ function Home() {
                   border: "3.5px solid white",
                 }}
               />
-              <i className="bi bi-pencil float-end me-4 mt-2 fs-5"></i>
+              <ModifyProfile />
             </div>
 
             <div className="p-4 mt-3">
               <div className="d-flex">
-                <h3 className="me-2 fs-4 m-0">
-                  {" "}
-                  {myProfile?.name} {myProfile?.surname}
-                </h3>
+                <h3 className="me-2 fs-4 m-0"> {myProfile?.name}</h3>
                 <a
                   href="#"
                   className="rounded-pill border-dashed d-inline-block text-primary text-decoration-none pt-0 ps-2 pe-2 fw-semibold"
@@ -59,7 +57,7 @@ function Home() {
                 </a>
               </div>
 
-              <p className="m-0 mt-1 mb-1"> Full Stack Developer</p>
+              <p className="m-0 mt-1 mb-1"> {myProfile?.title}</p>
 
               <div className="d-flex align-items-center">
                 <p className="m-0  me-1 text-muted" style={{ fontSize: "0.9rem" }}>
