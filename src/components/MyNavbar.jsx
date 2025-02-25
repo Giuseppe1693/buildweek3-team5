@@ -1,6 +1,11 @@
 import { Container, Navbar, Nav, NavDropdown, Form } from "react-bootstrap";
+import { useSelector } from "react-redux";
 
 function MyNavbar() {
+  const myProfile = useSelector((state) => {
+    console.log(state);
+    return state.myprofile.content;
+  });
   return (
     <Navbar expand="lg" style={{ backgroundColor: "white" }}>
       <Container className="d-flex justify-content-between align-items-center">
@@ -80,7 +85,7 @@ function MyNavbar() {
               className="p-0"
               title={
                 <img
-                  src="https://us.123rf.com/450wm/aalbedouin/aalbedouin1705/aalbedouin170501470/78146445-profilo-icona-simbolo-elemento-utente-isolato-di-qualit%C3%A0-premium-in-stile-alla-moda.jpg"
+                  src={myProfile.image}
                   alt="profile"
                   style={{
                     width: "30px",
