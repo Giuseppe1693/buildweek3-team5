@@ -16,6 +16,7 @@ function Example() {
     bio: "",
     title: "",
     area: "",
+    image: "",
     /*  image: "", */
   });
 
@@ -26,13 +27,6 @@ function Example() {
   const handleChange = (e) => {
     setProfile({ ...profile, [e.target.name]: e.target.value });
   };
-
-  // Funzione per salvare i dati
-  /*   const handleSave = () => {
-    console.log("Dati salvati", profile);
-    
-    setShow(false);
-  }; */
 
   const handleSave = async () => {
     try {
@@ -131,15 +125,15 @@ function Example() {
             onChange={handleChange}
           />
           <br />
-          {/*  <Form.Control
+          <Form.Control
             size="sm"
             type="text"
-            name="area"
+            name="image"
             placeholder="URL Immagine"
             value={profile.image}
             onChange={handleChange}
           />
-          <br /> */}
+          <br />
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
