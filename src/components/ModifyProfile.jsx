@@ -16,6 +16,7 @@ function Example() {
     bio: "",
     title: "",
     area: "",
+    /*  image: "", */
   });
 
   const handleClose = () => setShow(false);
@@ -27,9 +28,34 @@ function Example() {
   };
 
   // Funzione per salvare i dati
-  const handleSave = () => {
+  /*   const handleSave = () => {
     console.log("Dati salvati", profile);
+    
     setShow(false);
+  }; */
+
+  const handleSave = async () => {
+    try {
+      const response = await fetch("https://striveschool-api.herokuapp.com/api/profile/", {
+        method: "PUT",
+        headers: {
+          Authorization:
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2JjNGNkM2U3MDMzNzAwMTUzMTZkYWUiLCJpYXQiOjE3NDAzOTM2ODMsImV4cCI6MTc0MTYwMzI4M30.tM6t2Rh-7iEQNFJu8UFjJn4h9cGKrxIPWJj-y-sV3rc",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(profile),
+      });
+
+      if (!response.ok) {
+        throw new Error("Errore nella richiesta");
+      }
+
+      const data = await response.json();
+      console.log("Dati salvati:", data);
+      setShow(false);
+    } catch (error) {
+      console.error("Errore nel salvataggio dei dati:", error);
+    }
   };
 
   return (
@@ -105,12 +131,21 @@ function Example() {
             onChange={handleChange}
           />
           <br />
+          {/*  <Form.Control
+            size="sm"
+            type="text"
+            name="area"
+            placeholder="URL Immagine"
+            value={profile.image}
+            onChange={handleChange}
+          />
+          <br /> */}
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Chiudi
           </Button>
-          <Button variant="primary" onClick={handleSave}>
+          <Button variant="primary" type="submit" onClick={handleSave}>
             Salva
           </Button>
         </Modal.Footer>
