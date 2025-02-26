@@ -17,7 +17,6 @@ function Example() {
     title: "",
     area: "",
     image: "",
-    /*  image: "", */
   });
 
   const handleClose = () => setShow(false);

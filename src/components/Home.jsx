@@ -4,6 +4,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { getMyProfile } from "../redux/actions";
 import { useEffect } from "react";
 import ModifyProfile from "./ModifyProfile";
+import ProfileUserPage from "./ProfileUserPage";
+import UserYouKnow from "./UserYouKnow";
+
 function Home() {
   /*   const [myProfile, setmyProfile] = useState(null); */
   /* const myProfile = useSelector((state) => state.myProfiley.content); */
@@ -323,138 +326,8 @@ function Home() {
               </div>
             </div>
           </div>
-
-          <div className="border rounded m-3 bg-white p-4 small">
-            <h5 className="m-0" style={{ fontSize: "1rem" }}>
-              Altre visualizzazioni
-            </h5>
-            <p className="text-secondary" style={{ fontSize: "0.9rem" }}>
-              <i className="bi bi-eye-fill me-1"></i>
-              Solo per te
-            </p>
-            <div className="d-flex align-items-start pb-4 border-bottom">
-              <img
-                src="https://cdn.calciomercato.com/images/2019-05/Whatsapp.senza.immagine.2019.1400x840.jpg"
-                alt="Profile"
-                className="rounded-circle me-1 img-fluid"
-                style={{
-                  width: "60px",
-                  height: "60px",
-                  objectFit: "cover",
-                }}
-              />
-              <div>
-                <p className="m-0" style={{ fontSize: "1rem" }}>
-                  Nome Cognome
-                </p>
-                <p className="mb-2" style={{ fontSize: "0.85rem" }}>
-                  Lavoro
-                </p>
-                <Button
-                  variant="outline-secondary"
-                  className="rounded-pill btn-sm flex-grow-1 flex-md-grow-0"
-                  style={{ width: "100px" }}
-                >
-                  <i className="bi bi-person-plus-fill me-2"></i>
-                  Collegati
-                </Button>
-              </div>
-            </div>
-            <div className="d-flex align-items-start pt-3 mt-3 pb-4 border-bottom">
-              <img
-                src="https://cdn.calciomercato.com/images/2019-05/Whatsapp.senza.immagine.2019.1400x840.jpg"
-                alt="Profile"
-                className="rounded-circle me-1 img-fluid"
-                style={{
-                  width: "60px",
-                  height: "60px",
-                  objectFit: "cover",
-                }}
-              />
-              <div>
-                <p className="m-0" style={{ fontSize: "1rem" }}>
-                  Nome Cognome
-                </p>
-                <p className="mb-2" style={{ fontSize: "0.85rem" }}>
-                  Lavoro
-                </p>
-                <Button
-                  variant="outline-secondary"
-                  className="rounded-pill btn-sm flex-grow-1 flex-md-grow-0"
-                  style={{ width: "100px" }}
-                >
-                  <i className="bi bi-person-plus-fill me-2"></i>
-                  Collegati
-                </Button>
-              </div>
-            </div>
-          </div>
-
-          <div className="border rounded m-3 bg-white p-4 small">
-            <h5 className="m-0" style={{ fontSize: "1rem" }}>
-              Persone che potresti conoscere
-            </h5>
-            <p className="text-secondary mb-0" style={{ fontSize: "0.9rem" }}>
-              Dalla tua scuola o università
-            </p>
-
-            <div className="d-flex align-items-start pt-3 pb-4 border-bottom">
-              <img
-                src="https://cdn.calciomercato.com/images/2019-05/Whatsapp.senza.immagine.2019.1400x840.jpg"
-                alt="Profile"
-                className="rounded-circle me-1 img-fluid"
-                style={{
-                  width: "60px",
-                  height: "60px",
-                  objectFit: "cover",
-                }}
-              />
-              <div>
-                <p className="m-0" style={{ fontSize: "1rem" }}>
-                  Nome Cognome
-                </p>
-                <p className="mb-2" style={{ fontSize: "0.85rem" }}>
-                  Lavoro
-                </p>
-                <Button
-                  variant="outline-secondary"
-                  className="rounded-pill btn-sm flex-grow-1 flex-md-grow-0"
-                  style={{ width: "100px" }}
-                >
-                  <i className="bi bi-person-plus-fill me-2"></i>
-                  Collegati
-                </Button>
-              </div>
-            </div>
-            <div className="d-flex align-items-start pt-3 mt-3 pb-4 border-bottom">
-              <img
-                src="https://cdn.calciomercato.com/images/2019-05/Whatsapp.senza.immagine.2019.1400x840.jpg"
-                alt="Profile"
-                className="rounded-circle me-1 img-fluid"
-                style={{
-                  width: "60px",
-                  height: "60px",
-                  objectFit: "cover",
-                }}
-              />
-              <div>
-                <p className="m-0" style={{ fontSize: "1rem" }}>
-                  Nome Cognome
-                </p>
-                <p className="mb-2" style={{ fontSize: "0.85rem" }}>
-                  Lavoro
-                </p>
-                <Button
-                  variant="outline-secondary"
-                  className="rounded-pill btn-sm flex-grow-1 flex-md-grow-0"
-                  style={{ width: "100px" }}
-                >
-                  <i className="bi bi-person-plus-fill me-2"></i>
-                  Collegati
-                </Button>
-              </div>
-            </div>
-          </div>
+          <ProfileUserPage />
+          <UserYouKnow />
         </Col>
       </Row>
     </Container>
