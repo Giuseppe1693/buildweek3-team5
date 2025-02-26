@@ -6,8 +6,57 @@ import Modal from "react-bootstrap/Modal";
 function Example() {
   const [show, setShow] = useState(false);
 
+  //Stato per dati profilo - State
+  const [profile, setProfile] = useState({
+    //Profile (stato attuale), setProfile (è lo funzione x aggiornarlo)
+    name: "",
+    surname: "",
+    email: "",
+    username: "",
+    bio: "",
+    title: "",
+    area: "",
+    /*  image: "", */
+  });
+
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  //funzione per aggiornare Dati
+  const handleChange = (e) => {
+    setProfile({ ...profile, [e.target.name]: e.target.value });
+  };
+
+  // Funzione per salvare i dati
+  /*   const handleSave = () => {
+    console.log("Dati salvati", profile);
+    
+    setShow(false);
+  }; */
+
+  const handleSave = async () => {
+    try {
+      const response = await fetch("https://striveschool-api.herokuapp.com/api/profile/", {
+        method: "PUT",
+        headers: {
+          Authorization:
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2JjNGNkM2U3MDMzNzAwMTUzMTZkYWUiLCJpYXQiOjE3NDAzOTM2ODMsImV4cCI6MTc0MTYwMzI4M30.tM6t2Rh-7iEQNFJu8UFjJn4h9cGKrxIPWJj-y-sV3rc",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(profile),
+      });
+
+      if (!response.ok) {
+        throw new Error("Errore nella richiesta");
+      }
+
+      const data = await response.json();
+      console.log("Dati salvati:", data);
+      setShow(false);
+    } catch (error) {
+      console.error("Errore nel salvataggio dei dati:", error);
+    }
+  };
 
   return (
     <>
@@ -19,26 +68,84 @@ function Example() {
         </Modal.Header>
         <Modal.Body>
           Modifica i Campi
-          <Form.Control size="sm" type="text" placeholder="Nome" />
+          <Form.Control
+            size="sm"
+            type="text"
+            name="name"
+            placeholder="Nome"
+            value={profile.name}
+            onChange={handleChange}
+          />
           <br />
-          <Form.Control size="sm" type="text" placeholder="Cognome" />
+          <Form.Control
+            size="sm"
+            type="text"
+            name="surname"
+            placeholder="Cognome"
+            value={profile.surname}
+            onChange={handleChange}
+          />
           <br />
-          <Form.Control size="sm" type="text" placeholder="E-mail" />
+          <Form.Control
+            size="sm"
+            type="text"
+            name="email"
+            placeholder="E-mail"
+            value={profile.email}
+            onChange={handleChange}
+          />
           <br />
-          <Form.Control size="sm" type="text" placeholder="Username" />
+          <Form.Control
+            size="sm"
+            type="text"
+            name="username"
+            placeholder="Username"
+            value={profile.username}
+            onChange={handleChange}
+          />
           <br />
-          <Form.Control size="sm" type="text" placeholder="Bio" />
+          <Form.Control
+            size="sm"
+            type="text"
+            name="bio"
+            placeholder="Bio"
+            value={profile.bio}
+            onChange={handleChange}
+          />
           <br />
-          <Form.Control size="sm" type="text" placeholder="Titolo" />
+          <Form.Control
+            size="sm"
+            type="text"
+            name="title"
+            placeholder="Titolo"
+            value={profile.title}
+            onChange={handleChange}
+          />
           <br />
-          <Form.Control size="sm" type="text" placeholder="Citta'" />
+          <Form.Control
+            size="sm"
+            type="text"
+            name="area"
+            placeholder="Citta'"
+            value={profile.area}
+            onChange={handleChange}
+          />
           <br />
+          {/*  <Form.Control
+            size="sm"
+            type="text"
+            name="area"
+            placeholder="URL Immagine"
+            value={profile.image}
+            onChange={handleChange}
+          />
+          <br /> */}
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Chiudi
           </Button>
-          <Button variant="primary" onClick={handleClose}>
+          <Button variant="primary" type="submit" onClick={handleSave}>
             Salva
           </Button>
         </Modal.Footer>
