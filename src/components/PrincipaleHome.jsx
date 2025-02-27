@@ -24,22 +24,26 @@ function PrincipaleHome() {
           <Col className="col-3">
             <section className="border-radius bg-white ">
               <div>
-                <img className="copertina" src={myProfile.image} alt="Copertina" style={{ height: "75px" }} />
+                <a href="/Profile">
+                  <img className="copertina" src={myProfile.image} alt="Copertina" style={{ height: "75px" }} />
+                </a>
               </div>
               <div className="position-relative">
-                <img
-                  src={myProfile.image}
-                  alt="Foto Profilo"
-                  className="position-absolute rounded-circle ms-3"
-                  style={{
-                    bottom: "-40px",
-                    left: "10px",
-                    width: "70px",
-                    height: "70px",
-                    objectFit: "cover",
-                    border: "3.5px solid white",
-                  }}
-                />
+                <a href="/Profile">
+                  <img
+                    src={myProfile.image}
+                    alt="Foto Profilo"
+                    className="position-absolute rounded-circle ms-3"
+                    style={{
+                      bottom: "-40px",
+                      left: "10px",
+                      width: "70px",
+                      height: "70px",
+                      objectFit: "cover",
+                      border: "3.5px solid white",
+                    }}
+                  />
+                </a>
               </div>
               <div className="gap-px px-2 pb-2 mt-5">
                 <h6>
