@@ -45,7 +45,7 @@ function PrincipaleHome() {
                   />
                 </a>
               </div>
-              <div className="gap-px px-2 pb-2 mt-5">
+              <div className="gap-px px-4 pb-2 mt-5">
                 <h6>
                   {myProfile?.name} {myProfile?.surname}
                 </h6>
@@ -56,14 +56,14 @@ function PrincipaleHome() {
             </section>
             {/* SEZIONE 2: Visitatore */}
             <section className="border rounded bg-white my-3">
-              <ul className="list-unstyled small p-3">
+              <ul className="list-unstyled small p-3 px-4">
                 <li className="d-flex justify-content-between">
                   <a className="text-decoration-none small fw-bold text-dark" href="#">
                     Visualizzatori del profilo
                   </a>
                   <span>7</span>
                 </li>
-                <li>
+                <li className="pt-2">
                   <a className="text-decoration-none small fw-bold text-dark" href="#">
                     Visualizza tutte le analisi
                   </a>
@@ -71,7 +71,7 @@ function PrincipaleHome() {
               </ul>
             </section>
             {/* SEZIONE 3 */}
-            <section className="border rounded bg-white my-3 p-3">
+            <section className="border rounded bg-white my-3 p-3 px-4">
               <h6 className="text-secondary small">Ottieni 4 volte più visualizzazioni del profilo con Premium </h6>
               <div className="d-flex ">
                 <span>
@@ -87,7 +87,7 @@ function PrincipaleHome() {
               </div>
             </section>
             {/* SEZIONE 4: Elementi,etc */}
-            <section className="border rounded bg-white p-3">
+            <section className="border rounded bg-white p-3 px-4">
               <ul className="list-unstyled small">
                 <li>
                   <a href="#" className="text-decoration-none small text-dark">
@@ -140,7 +140,7 @@ function PrincipaleHome() {
                   <a href="/Profile">
                     <img
                       className="border rounded-circle"
-                      src="https://plus.unsplash.com/premium_photo-1734498806682-815214e27815?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      src={myProfile.image}
                       alt="Foto profilo"
                       style={{
                         width: "70px",
