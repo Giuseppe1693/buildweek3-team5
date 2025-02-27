@@ -1,9 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Form } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import { useDispatch, useSelector } from "react-redux";
+import { getMyProfile } from "../redux/actions";
 
 function Example() {
+  const myProfile = useSelector((state) => {
+    console.log(state);
+    return state.myprofile.content;
+  });
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getMyProfile());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   const [show, setShow] = useState(false);
 
   //Stato per dati profilo - State
@@ -18,6 +31,21 @@ function Example() {
     area: "",
     image: "",
   });
+
+  useEffect(() => {
+    if (myProfile) {
+      setProfile({
+        name: myProfile.name || "",
+        surname: myProfile.surname || "",
+        email: myProfile.email || "",
+        username: myProfile.username || "",
+        bio: myProfile.bio || "",
+        title: myProfile.title || "",
+        area: myProfile.area || "",
+        image: myProfile.image || "",
+      });
+    }
+  }, [myProfile]);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
