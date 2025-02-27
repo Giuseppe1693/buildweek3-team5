@@ -1,6 +1,21 @@
+import { useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
+import { getMyProfile } from "../redux/actions";
 
 function PrincipaleHome() {
+  const myProfile = useSelector((state) => {
+    console.log(state);
+    return state.myprofile.content;
+  });
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getMyProfile());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <>
       <Container className="mt-5">
@@ -9,16 +24,11 @@ function PrincipaleHome() {
           <Col className="col-3">
             <section className="border-radius bg-white ">
               <div>
-                <img
-                  className="copertina"
-                  src="https://images.unsplash.com/photo-1505533321630-975218a5f66f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt="Copertina"
-                  style={{ height: "75px" }}
-                />
+                <img className="copertina" src={myProfile.image} alt="Copertina" style={{ height: "75px" }} />
               </div>
               <div className="position-relative">
                 <img
-                  src="https://images.unsplash.com/photo-1505533321630-975218a5f66f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  src={myProfile.image}
                   alt="Foto Profilo"
                   className="position-absolute rounded-circle ms-3"
                   style={{
@@ -32,7 +42,9 @@ function PrincipaleHome() {
                 />
               </div>
               <div className="gap-px px-2 pb-2 mt-5">
-                <h6>Nome Cognome</h6>
+                <h6>
+                  {myProfile?.name} {myProfile?.surname}
+                </h6>
                 <p>Pippo, Dirigente. Milan.</p>
                 <p>San Siro, Milano.</p>
                 <p>Corso Motivatore Aggressive</p>

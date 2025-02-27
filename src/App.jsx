@@ -11,8 +11,8 @@ function App() {
     <BrowserRouter>
       <MyNavbar />
       <Routes>
-        <Route path="/PrincipaleHome" element={<PrincipaleHome />} />
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<PrincipaleHome />} />
+        <Route path="/profile" element={<Home />} />
         <Route path="/modifyprofile" element={<ModifyProfile />} />
       </Routes>
       <MyFooter />

@@ -1,6 +1,8 @@
 import { Container, Navbar, Nav, NavDropdown, Form } from "react-bootstrap";
 import { useSelector } from "react-redux";
 
+import { Link } from "react-router";
+
 function MyNavbar() {
   const myProfile = useSelector((state) => {
     console.log(state);
@@ -44,13 +46,10 @@ function MyNavbar() {
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav className="ms-auto my-2 my-lg-0 d-flex align-items-center gap-5 navbarScroll">
-            <Nav.Link
-              href="#action1"
-              className="d-flex flex-column align-items-center text-secondary text-decoration-none p-0 "
-            >
+            <Link to="/" className="d-flex flex-column align-items-center text-secondary text-decoration-none p-0 ">
               <i className="bi bi-house-door-fill fs-5"></i>
               <span style={{ fontSize: "0.75rem" }}>Home</span>
-            </Nav.Link>
+            </Link>
             <Nav.Link
               href="#action2"
               className="d-flex flex-column align-items-center text-secondary text-decoration-none p-0 "
@@ -95,7 +94,9 @@ function MyNavbar() {
                 />
               }
             >
-              <NavDropdown.Item href="#action6">Profilo</NavDropdown.Item>
+              <Link to="/profile">Profilo</Link>
+              <NavDropdown.Divider />
+
               <NavDropdown.Item href="#action7">Impostazioni</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action8">Esci</NavDropdown.Item>
