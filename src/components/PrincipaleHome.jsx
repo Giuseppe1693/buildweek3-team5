@@ -146,6 +146,7 @@ function PrincipaleHome() {
                         width: "70px",
                         height: "70px",
                         objectFit: "cover",
+                        border: "3.5px solid white",
                       }}
                     />
                   </a>
