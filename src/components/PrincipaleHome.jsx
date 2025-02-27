@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { getMyProfile } from "../redux/actions";
+import SezioneNotizie from "./SezioneNotizie";
 
 function PrincipaleHome() {
   const myProfile = useSelector((state) => {
@@ -193,7 +194,7 @@ function PrincipaleHome() {
             </div>
             {/* SEZIONE NOTIZIE */}
             <section>
-              <div></div>
+              <SezioneNotizie />
             </section>
           </Col>
           {/* SEZIONE DESTRA */}
