@@ -24,24 +24,28 @@ function PrincipaleHome() {
           <Col className="col-3">
             <section className="border-radius bg-white ">
               <div>
-                <img className="copertina" src={myProfile.image} alt="Copertina" style={{ height: "75px" }} />
+                <a href="/Profile">
+                  <img className="copertina" src={myProfile.image} alt="Copertina" style={{ height: "75px" }} />
+                </a>
               </div>
               <div className="position-relative">
-                <img
-                  src={myProfile.image}
-                  alt="Foto Profilo"
-                  className="position-absolute rounded-circle ms-3"
-                  style={{
-                    bottom: "-40px",
-                    left: "10px",
-                    width: "70px",
-                    height: "70px",
-                    objectFit: "cover",
-                    border: "3.5px solid white",
-                  }}
-                />
+                <a href="/Profile">
+                  <img
+                    src={myProfile.image}
+                    alt="Foto Profilo"
+                    className="position-absolute rounded-circle ms-3"
+                    style={{
+                      bottom: "-40px",
+                      left: "10px",
+                      width: "70px",
+                      height: "70px",
+                      objectFit: "cover",
+                      border: "3.5px solid white",
+                    }}
+                  />
+                </a>
               </div>
-              <div className="gap-px px-2 pb-2 mt-5">
+              <div className="gap-px px-4 pb-2 mt-5">
                 <h6>
                   {myProfile?.name} {myProfile?.surname}
                 </h6>
@@ -52,14 +56,14 @@ function PrincipaleHome() {
             </section>
             {/* SEZIONE 2: Visitatore */}
             <section className="border rounded bg-white my-3">
-              <ul className="list-unstyled small p-3">
+              <ul className="list-unstyled small p-3 px-4">
                 <li className="d-flex justify-content-between">
                   <a className="text-decoration-none small fw-bold text-dark" href="#">
                     Visualizzatori del profilo
                   </a>
                   <span>7</span>
                 </li>
-                <li>
+                <li className="pt-2">
                   <a className="text-decoration-none small fw-bold text-dark" href="#">
                     Visualizza tutte le analisi
                   </a>
@@ -67,7 +71,7 @@ function PrincipaleHome() {
               </ul>
             </section>
             {/* SEZIONE 3 */}
-            <section className="border rounded bg-white my-3 p-3">
+            <section className="border rounded bg-white my-3 p-3 px-4">
               <h6 className="text-secondary small">Ottieni 4 volte più visualizzazioni del profilo con Premium </h6>
               <div className="d-flex ">
                 <span>
@@ -83,7 +87,7 @@ function PrincipaleHome() {
               </div>
             </section>
             {/* SEZIONE 4: Elementi,etc */}
-            <section className="border rounded bg-white p-3">
+            <section className="border rounded bg-white p-3 px-4">
               <ul className="list-unstyled small">
                 <li>
                   <a href="#" className="text-decoration-none small text-dark">
@@ -131,10 +135,28 @@ function PrincipaleHome() {
           {/* SEZIONE CENTRALE */}
           <Col className="col-5 ">
             <section className="border-radius bg-white">
-              <div className="d-flex ">
+              <div className="d-flex">
                 <div className="d-flex align-item-center my-3 mx-5">
-                  <div className="border rounded-circle">img pro</div>
-                  <input type="text" placeholder="Crea un post" className="border rounded-pill bg-white my-3 mx-3" />
+                  <a href="/Profile">
+                    <img
+                      className="border rounded-circle"
+                      src={myProfile.image}
+                      alt="Foto profilo"
+                      style={{
+                        width: "70px",
+                        height: "70px",
+                        objectFit: "cover",
+                        border: "3.5px solid white",
+                      }}
+                    />
+                  </a>
+                  {/* <div className="border rounded-circle">img pro</div> */}
+                  <input
+                    type="text"
+                    placeholder="Crea un post"
+                    className="border rounded-pill bg-white my-3 mx-4 px-5"
+                    style={{ border: "1px solid black" }}
+                  />
                 </div>
               </div>
               <div className="d-flex justify-content-around pb-3 text-secondary">
@@ -160,7 +182,7 @@ function PrincipaleHome() {
                 </span>
               </div>
             </section>
-            <div className="d-flex justify-content-around">
+            <div className="d-flex justify-content-around my-2">
               <hr className="text-dark px-5" />
               <span className="text-secondary">
                 Seleziona le visualizzazione del feed:{" "}
@@ -170,6 +192,9 @@ function PrincipaleHome() {
               </span>
             </div>
             {/* SEZIONE NOTIZIE */}
+            <section>
+              <div></div>
+            </section>
           </Col>
           {/* SEZIONE DESTRA */}
           <Col className="col-4">
