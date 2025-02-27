@@ -137,7 +137,19 @@ function PrincipaleHome() {
             <section className="border-radius bg-white">
               <div className="d-flex ">
                 <div className="d-flex align-item-center my-3 mx-5">
-                  <div className="border rounded-circle">img pro</div>
+                  <a href="/Profile">
+                    <img
+                      className="border rounded-circle"
+                      src="https://plus.unsplash.com/premium_photo-1734498806682-815214e27815?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      alt="Foto profilo"
+                      style={{
+                        width: "70px",
+                        height: "70px",
+                        objectFit: "cover",
+                      }}
+                    />
+                  </a>
+                  {/* <div className="border rounded-circle">img pro</div> */}
                   <input type="text" placeholder="Crea un post" className="border rounded-pill bg-white my-3 mx-3" />
                 </div>
               </div>
