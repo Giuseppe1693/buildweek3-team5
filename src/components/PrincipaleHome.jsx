@@ -135,7 +135,7 @@ function PrincipaleHome() {
           {/* SEZIONE CENTRALE */}
           <Col className="col-5 ">
             <section className="border-radius bg-white">
-              <div className="d-flex ">
+              <div className="d-flex">
                 <div className="d-flex align-item-center my-3 mx-5">
                   <a href="/Profile">
                     <img
@@ -151,7 +151,12 @@ function PrincipaleHome() {
                     />
                   </a>
                   {/* <div className="border rounded-circle">img pro</div> */}
-                  <input type="text" placeholder="Crea un post" className="border rounded-pill bg-white my-3 mx-3" />
+                  <input
+                    type="text"
+                    placeholder="Crea un post"
+                    className="border rounded-pill bg-white my-3 mx-4 px-5"
+                    style={{ border: "1px solid black" }}
+                  />
                 </div>
               </div>
               <div className="d-flex justify-content-around pb-3 text-secondary">
@@ -177,7 +182,7 @@ function PrincipaleHome() {
                 </span>
               </div>
             </section>
-            <div className="d-flex justify-content-around">
+            <div className="d-flex justify-content-around my-2">
               <hr className="text-dark px-5" />
               <span className="text-secondary">
                 Seleziona le visualizzazione del feed:{" "}
@@ -187,6 +192,9 @@ function PrincipaleHome() {
               </span>
             </div>
             {/* SEZIONE NOTIZIE */}
+            <section>
+              <div></div>
+            </section>
           </Col>
           {/* SEZIONE DESTRA */}
           <Col className="col-4">
