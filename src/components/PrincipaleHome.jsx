@@ -50,6 +50,7 @@ function PrincipaleHome() {
                 <p>Corso Motivatore Aggressive</p>
               </div>
             </section>
+            {/* SEZIONE 2: Visitatore */}
             <section className="border rounded bg-white my-3">
               <ul className="list-unstyled small p-3">
                 <li className="d-flex justify-content-between">
@@ -65,8 +66,66 @@ function PrincipaleHome() {
                 </li>
               </ul>
             </section>
-            <section className="border rounded bg-white my-3">
+            {/* SEZIONE 3 */}
+            <section className="border rounded bg-white my-3 p-3">
               <h6 className="text-secondary small">Ottieni 4 volte più visualizzazioni del profilo con Premium </h6>
+              <div className="d-flex ">
+                <span>
+                  <img
+                    src="https://images.unsplash.com/flagged/photo-1593005510329-8a4035a7238f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="logo mini"
+                    style={{ height: "15px", width: "15px" }}
+                  />
+                </span>
+                <span>
+                  <b className="small px-1">Prova per 0 EUR</b>
+                </span>
+              </div>
+            </section>
+            {/* SEZIONE 4: Elementi,etc */}
+            <section className="border rounded bg-white p-3">
+              <ul className="list-unstyled small">
+                <li>
+                  <a href="#" className="text-decoration-none small text-dark">
+                    <p>
+                      <i className="bi bi-bookmark-fill"></i>
+                      <span className="px-1">
+                        <b>Elementi salvati</b>
+                      </span>
+                    </p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-decoration-none small text-dark">
+                    <p>
+                      <i className="bi bi-people-fill"></i>
+                      <span className="px-1">
+                        <b>Gruppi</b>
+                      </span>
+                    </p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-decoration-none small text-dark">
+                    <p>
+                      <i className="bi bi-newspaper"></i>
+                      <span className="px-1">
+                        <b>Newsletter</b>
+                      </span>
+                    </p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-decoration-none small text-dark">
+                    <p>
+                      <i className="bi bi-calendar4"></i>
+                      <span className="px-1">
+                        <b>Eventi</b>
+                      </span>
+                    </p>
+                  </a>
+                </li>
+              </ul>
             </section>
           </Col>
           {/* SEZIONE CENTRALE */}
