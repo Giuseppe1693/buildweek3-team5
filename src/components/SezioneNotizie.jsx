@@ -97,7 +97,12 @@ const SezioneNotizie = () => {
     <section>
       {news.slice(0, 10).map((article) => (
         <div key={article._id} className="border p-3 my-2 bg-white rounded">
-          <h5>{article.username}</h5>
+          <div className="d-flex justify-content-between">
+            <h5>{article.username}</h5>
+            <button onClick={() => handleEdit(article._id, article.text)} className="btn btn-trasparent mt-2">
+              <i className="bi bi-three-dots"></i>
+            </button>
+          </div>
 
           {editingPostId === article._id ? (
             <div>
@@ -113,9 +118,6 @@ const SezioneNotizie = () => {
 
           <small className="text-muted">{new Date(article.createdAt).toLocaleString()}</small>
           {/* BOTTONE MODIFICA */}
-          <button onClick={() => handleEdit(article._id, article.text)} className="btn btn-warning mt-2">
-            Modifica
-          </button>
         </div>
       ))}
     </section>
