@@ -50,9 +50,20 @@ function PrincipaleHome() {
                 <h6>
                   {myProfile?.name} {myProfile?.surname}
                 </h6>
-                <p>Pippo, Dirigente. Milan.</p>
-                <p>San Siro, Milano.</p>
-                <p>Corso Motivatore Aggressive</p>
+                <p>{myProfile?.area}</p>
+                <p>
+                  <strong>E-mail: </strong>
+                  {myProfile?.email}
+                </p>
+                <p>
+                  <strong>UserName:</strong> {myProfile?.username}
+                </p>
+                <p>
+                  <strong>Attività:</strong> {myProfile?.title}
+                </p>
+                <p>
+                  <strong>Su di me:</strong> {myProfile?.bio}
+                </p>
               </div>
             </section>
             {/* SEZIONE 2: Visitatore */}

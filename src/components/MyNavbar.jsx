@@ -57,13 +57,14 @@ function MyNavbar() {
               <i className="bi bi-person-lines-fill fs-5"></i>
               <span style={{ fontSize: "0.75rem" }}>Rete</span>
             </Nav.Link>
-            <Nav.Link
+            <Link
+              to="/jobs"
               href="#action3"
               className="d-flex flex-column align-items-center text-secondary text-decoration-none p-0 "
             >
               <i className="bi bi-briefcase-fill fs-5"></i>
               <span style={{ fontSize: "0.75rem" }}>Lavoro</span>
-            </Nav.Link>
+            </Link>
             <Nav.Link
               href="#action4"
               className="d-flex flex-column align-items-center text-secondary text-decoration-none p-0 "
@@ -94,7 +95,9 @@ function MyNavbar() {
                 />
               }
             >
-              <Link to="/profile">Profilo</Link>
+              <Link to="/profile" style={{ textDecoration: "none", color: "black", marginLeft: "15px" }}>
+                Profilo
+              </Link>
               <NavDropdown.Divider />
 
               <NavDropdown.Item href="#action7">Impostazioni</NavDropdown.Item>
