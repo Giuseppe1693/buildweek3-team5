@@ -5,6 +5,7 @@ import MyNavbar from "./components/MyNavbar";
 import ModifyProfile from "./components/ModifyProfile";
 import { BrowserRouter, Route, Routes } from "react-router";
 import PrincipaleHome from "./components/PrincipaleHome";
+import Jobs from "./components/Jobs";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<PrincipaleHome />} />
         <Route path="/profile" element={<Home />} />
+        <Route path="/jobs" element={<Jobs />} />
         <Route path="/modifyprofile" element={<ModifyProfile />} />
       </Routes>
       <MyFooter />

@@ -49,7 +49,6 @@ function Home() {
             <div className="p-4 mt-3">
               <div className="d-flex">
                 <h3 className="me-2 fs-4 m-0">
-                  {" "}
                   {myProfile?.name} {myProfile?.surname}
                 </h3>
                 <a
@@ -57,7 +56,6 @@ function Home() {
                   className="rounded-pill border-dashed d-inline-block text-primary text-decoration-none pt-0 ps-2 pe-2 fw-semibold"
                   style={{ border: "1.5px dashed currentColor", fontSize: "0.85rem" }}
                 >
-                  {" "}
                   <i className="bi bi-patch-check-fill me-1 "></i>
                   Aggiungi badge di verifica
                 </a>
