@@ -12,6 +12,7 @@ function PrincipaleHome() {
 
   const dispatch = useDispatch();
   const [newPostText, setNewPostText] = useState(""); //Stato per la gestione del nuovo post
+  const [newsList, setNewsList] = useState([]); //Stato per i post
 
   useEffect(() => {
     dispatch(getMyProfile());
@@ -30,8 +31,16 @@ function PrincipaleHome() {
         },
         body: JSON.stringify({ text: newPostText }),
       });
+
       if (response.ok) {
-        document.dispatchEvent(new Event("postsUpdated"));
+        const newPostResponse = await fetch(`https://striveschool-api.herokuapp.com/api/posts/${response.id}`, {
+          headers: {
+            Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2JjNGNkM2U3MDMzNzAwMTUzMTZkYWUiLCJpYXQiOjE3NDAzOTM2ODMsImV4cCI6MTc0MTYwMzI4M30.tM6t2Rh-7iEQNFJu8UFjJn4h9cGKrxIPWJj-y-sV3rc`,
+          },
+        });
+        const newPost = await newPostResponse.json();
+
+        document.dispatchEvent(new CustomEvent("newPostCreated", { detail: newPost }));
       }
       // setNewPostText("");
     } catch (error) {
@@ -235,7 +244,7 @@ function PrincipaleHome() {
             </div>
             {/* SEZIONE NOTIZIE */}
             <section>
-              <SezioneNotizie />
+              <SezioneNotizie new={newsList} setNews={setNewsList} />
             </section>
           </Col>
           {/* SEZIONE DESTRA */}
