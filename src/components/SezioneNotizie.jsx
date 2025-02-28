@@ -98,6 +98,16 @@ const SezioneNotizie = () => {
       {news.slice(0, 10).map((article) => (
         <div key={article._id} className="border p-3 my-2 bg-white rounded">
           <div className="d-flex justify-content-between">
+            <img
+              src={article.image}
+              alt="foto profilo"
+              style={{
+                width: "70px",
+                height: "70px",
+                objectFit: "cover",
+                border: "3.5px solid white",
+              }}
+            />
             <h5>{article.username}</h5>
             <button onClick={() => handleEdit(article._id, article.text)} className="btn btn-trasparent mt-2">
               <i className="bi bi-three-dots"></i>
@@ -107,6 +117,7 @@ const SezioneNotizie = () => {
           {editingPostId === article._id ? (
             <div>
               <textarea value={newText} onChange={(e) => setNewText(e.target.value)} className="form-control mb-2" />
+              <img src={article.image} alt="Immagine Post" />
               {/* BOTTONE SALVA MODIFICHE */}
               <button onClick={() => handleSave(article._id, article.userId)} className="btn btn-success">
                 Salva
