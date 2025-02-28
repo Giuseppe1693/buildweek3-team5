@@ -9,27 +9,42 @@ function MyFooter() {
             <div className="footer-column">
               <ul className="list-unstyled small">
                 <li className="mb-1">
-                  <a href="#" className="text-secondary link-primary text-decoration-none small fw-bold ">
+                  <a
+                    href="https://about.linkedin.com/it-it"
+                    className="text-secondary link-primary text-decoration-none small fw-bold "
+                  >
                     Informazioni
                   </a>
                 </li>
-                <li className="mb-1">
-                  <a href="#" className="text-secondary link-primary text-decoration-none small fw-bold">
+                <li className="mb-1 text-secondary">
+                  <a
+                    href="https://it.linkedin.com/legal/professional-community-policies?"
+                    className="text-secondary link-primary text-decoration-none small fw-bold"
+                  >
                     Informativa sulla community <br /> professionale
                   </a>
                 </li>
-                <li className="mb-1">
-                  <a href="#" className="text-secondary link-primary text-decoration-none small fw-bold">
+                <li className="mb-1 text-secondary ">
+                  <a
+                    href="https://it.linkedin.com/legal/privacy-policy?"
+                    className="text-secondary link-primary text-decoration-none small fw-bold"
+                  >
                     Privacy e condizioni
                   </a>
                 </li>
-                <li className="mb-1">
-                  <a href="#" className="text-secondary link-primary text-decoration-none small fw-bold">
+                <li className="mb-1 text-secondary">
+                  <a
+                    href="https://business.linkedin.com/sales-solutions?trk=flagship_nav&veh=li-footer-lss-control&src=li-footer"
+                    className="text-secondary link-primary text-decoration-none small fw-bold"
+                  >
                     Sales Solutions
                   </a>
                 </li>
-                <li>
-                  <a href="#" className="text-secondary link-primary text-decoration-none small fw-bold">
+                <li className="text-secondary">
+                  <a
+                    href="https://about.linkedin.com/transparency"
+                    className="text-secondary link-primary text-decoration-none small fw-bold"
+                  >
                     Centro sicurezza
                   </a>
                 </li>
@@ -39,23 +54,35 @@ function MyFooter() {
           <div className="footer-grid">
             <div className="footer-column">
               <ul className="list-unstyled small">
-                <li className="mb-1">
-                  <a href="#" className="text-secondary link-primary text-decoration-none small fw-bold">
+                <li className="mb-1 text-secondary">
+                  <a
+                    href="https://it.linkedin.com/accessibility?"
+                    className="text-secondary link-primary text-decoration-none small fw-bold"
+                  >
                     Accessibilità
                   </a>
                 </li>
-                <li className="mb-1">
-                  <a href="#" className="text-secondary link-primary text-decoration-none small fw-bold">
+                <li className="mb-1 text-secondary">
+                  <a
+                    href="https://careers.linkedin.com/"
+                    className="text-secondary link-primary text-decoration-none small fw-bold"
+                  >
                     Carriera
                   </a>
                 </li>
-                <li className="mb-1">
-                  <a href="#" className="text-secondary link-primary text-decoration-none small fw-bold">
+                <li className="mb-1 text-secondary">
+                  <a
+                    href="https://www.linkedin.com/help/linkedin/answer/a1342443/?lang=it"
+                    className="text-secondary link-primary text-decoration-none small fw-bold"
+                  >
                     Opzioni per gli annunci pubblicitari
                   </a>
                 </li>
-                <li>
-                  <a href="#" className="text-secondary link-primary text-decoration-none small fw-bold">
+                <li className="text-secondary">
+                  <a
+                    href="https://mobile.linkedin.com/it-it"
+                    className="text-secondary link-primary text-decoration-none small fw-bold"
+                  >
                     Mobile
                   </a>
                 </li>
@@ -70,18 +97,27 @@ function MyFooter() {
                     Centro assistenza
                   </a>
                 </li>
-                <li className="mb-1">
-                  <a href="#" className="text-secondary link-primary text-decoration-none small fw-bold">
+                <li className="mb-1 text-secondary">
+                  <a
+                    href="https://business.linkedin.com/it-it/marketing-solutions?trk=n_nav_lms_f&src=li-footer"
+                    className="text-secondary link-primary text-decoration-none small fw-bold"
+                  >
                     Soluzioni di marketing
                   </a>
                 </li>
-                <li className="mb-1">
-                  <a href="#" className="text-secondary link-primary text-decoration-none small fw-bold">
+                <li className="mb-1 text-secondary">
+                  <a
+                    href="https://business.linkedin.com/marketing-solutions/ads?trk=n_nav_ads_rr_b&src=li-nav&veh=ad%2Fstart"
+                    className="text-secondary link-primary text-decoration-none small fw-bold"
+                  >
                     Pubblicità
                   </a>
                 </li>
-                <li>
-                  <a href="#" className="text-secondary link-primary text-decoration-none small fw-bold">
+                <li className="mb-1 text-secondary">
+                  <a
+                    href="https://business.linkedin.com/small-business?&src=li-footer#"
+                    className="text-secondary link-primary text-decoration-none small fw-bold"
+                  >
                     Piccole imprese
                   </a>
                 </li>
@@ -94,7 +130,7 @@ function MyFooter() {
             <i className="bi bi-question-circle-fill text-muted fs-5"></i>
             <div>
               <a
-                href="#"
+                href="https://www.linkedin.com/help/linkedin?trk=d_flagship3_feed"
                 className="text-secondary link-primary text-decoration-none small fw-bold"
                 style={{ fontSize: "13px" }}
               >
@@ -109,7 +145,7 @@ function MyFooter() {
             <i className="bi bi-gear-fill text-muted fs-5"></i>
             <div>
               <a
-                href="#"
+                href="https://www.linkedin.com/mypreferences/d/categories/account"
                 className="text-secondary link-primary text-decoration-none small fw-bold"
                 style={{ fontSize: "13px" }}
               >
@@ -124,7 +160,7 @@ function MyFooter() {
             <i className="bi bi-shield-shaded text-muted fs-5"></i>
             <div>
               <a
-                href="#"
+                href="https://www.linkedin.com/help/linkedin/answer/a1339724"
                 className="text-secondary link-primary text-decoration-none small fw-bold"
                 style={{ fontSize: "13px" }}
               >
