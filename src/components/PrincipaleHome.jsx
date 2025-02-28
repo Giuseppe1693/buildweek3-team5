@@ -33,14 +33,25 @@ function PrincipaleHome() {
       });
 
       if (response.ok) {
-        const newPostResponse = await fetch(`https://striveschool-api.herokuapp.com/api/posts/${response.id}`, {
+        const newPostData = await response.json();
+        const newPostId = newPostData._id;
+
+        const newPostResponse = await fetch(`https://striveschool-api.herokuapp.com/api/posts/${newPostId}`, {
           headers: {
             Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2JjNGNkM2U3MDMzNzAwMTUzMTZkYWUiLCJpYXQiOjE3NDAzOTM2ODMsImV4cCI6MTc0MTYwMzI4M30.tM6t2Rh-7iEQNFJu8UFjJn4h9cGKrxIPWJj-y-sV3rc`,
           },
         });
-        const newPost = await newPostResponse.json();
-
-        document.dispatchEvent(new CustomEvent("newPostCreated", { detail: newPost }));
+        if (newPostResponse.ok) {
+          console.log(newPostResponse);
+          const newPost = await newPostResponse.json();
+          document.dispatchEvent(new CustomEvent("newPostCreated", { detail: newPost }));
+        } else {
+          console.error("Errore nel recupero del nuovo post:", newPostResponse.status);
+          alert("Errore nel recupero del nuovo post");
+        }
+      } else {
+        console.error("Errore nella creazione del post:", response.status);
+        alert("Errore nella creazione del post");
       }
       // setNewPostText("");
     } catch (error) {
