@@ -1,5 +1,23 @@
 import { useEffect, useState } from "react";
 
+const identitaDaToken = () => {
+  const token = localStorage.getItem("token");
+  if (!token) return null;
+
+  try {
+    const tokenParts = token.split(".");
+    if (tokenParts.length !== 3) return null;
+
+    const decoded = JSON.parse(atob(tokenParts[1]));
+    return decoded._id; //supponendo l'id nel token
+  } catch (error) {
+    console.error("Errore nella decodifica del token:", error);
+    return null;
+  }
+};
+
+const userId = identitaDaToken();
+
 const SezioneNotizie = () => {
   const [news, setNews] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -38,7 +56,12 @@ const SezioneNotizie = () => {
     setNewText(currentText); //Test nella sezione modifica
   };
 
-  const handleSave = async (postId) => {
+  const handleSave = async (postId, authorId) => {
+    if (userId !== authorId) {
+      alert("⚠️ ATTENZIONE ⚠️, Autorizzazione negata. NON hai i poteri per farlo, Stiamo venendo a prenderti!"); //Risposta IRONICA
+      return;
+    }
+
     try {
       const response = await fetch(`https://striveschool-api.herokuapp.com/api/posts/${postId}`, {
         method: "PATCH", //Add post
@@ -62,6 +85,7 @@ const SezioneNotizie = () => {
       setEditingPostId(null);
       setNewText("");
     } catch (error) {
+      console.error("Errore durante la modifica del post:", error); //Correzione dell'errore
       setError("Errore durante la modifica del post");
     }
   };
@@ -78,7 +102,8 @@ const SezioneNotizie = () => {
           {editingPostId === article._id ? (
             <div>
               <textarea value={newText} onChange={(e) => setNewText(e.target.value)} className="form-control mb-2" />
-              <button onClick={() => handleSave(article._id)} className="btn btn-success">
+              {/* BOTTONE SALVA MODIFICHE */}
+              <button onClick={() => handleSave(article._id, article.userId)} className="btn btn-success">
                 Salva
               </button>
             </div>
@@ -86,8 +111,8 @@ const SezioneNotizie = () => {
             <p>{article.text}</p>
           )}
 
-          {/* <p>{article.text}</p> */}
           <small className="text-muted">{new Date(article.createdAt).toLocaleString()}</small>
+          {/* BOTTONE MODIFICA */}
           <button onClick={() => handleEdit(article._id, article.text)} className="btn btn-warning mt-2">
             Modifica
           </button>

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { getMyProfile } from "../redux/actions";
@@ -11,11 +11,34 @@ function PrincipaleHome() {
   });
 
   const dispatch = useDispatch();
+  const [newPostText, setNewPostText] = useState(""); //Stato per la gestione del nuovo post
 
   useEffect(() => {
     dispatch(getMyProfile());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  const handleCreatePost = async () => {
+    try {
+      const authorizationCode =
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2JjNGNkM2U3MDMzNzAwMTUzMTZkYWUiLCJpYXQiOjE3NDAzOTM2ODMsImV4cCI6MTc0MTYwMzI4M30.tM6t2Rh-7iEQNFJu8UFjJn4h9cGKrxIPWJj-y-sV3rc"; //Recupero del token
+      const response = await fetch("https://striveschool-api.herokuapp.com/api/posts", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${authorizationCode}`, //è per rendere sicuro il codice di autorizzazione
+        },
+        body: JSON.stringify({ text: newPostText }),
+      });
+      if (response.ok) {
+        document.dispatchEvent(new Event("postsUpdated"));
+      }
+      // setNewPostText("");
+    } catch (error) {
+      console.error("Errore durante la creazione del post:", error);
+      alert("Errore durante la creazione del post"); //Alert di avviso non postato
+    }
+  };
 
   return (
     <>
@@ -157,6 +180,13 @@ function PrincipaleHome() {
                     placeholder="Crea un post"
                     className="border rounded-pill bg-white my-3 mx-4 px-5"
                     style={{ border: "1px solid black" }}
+                    value={newPostText} //Aggiunge valore
+                    onChange={(e) => setNewPostText(e.target.value)} //Aggiungi onChange
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter") {
+                        handleCreatePost();
+                      }
+                    }}
                   />
                 </div>
               </div>
